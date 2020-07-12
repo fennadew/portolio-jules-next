@@ -6,9 +6,6 @@ const Layout = ({ children }) => (
       <Link href="/">
         <a>home</a>
       </Link>
-      <Link href="/projects">
-        <a>projects</a>
-      </Link>
     </nav>
     <main>{children}</main>
     <style jsx>{`

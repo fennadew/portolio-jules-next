@@ -18,8 +18,8 @@ collections:
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
   - label: 'Project'
-    name: 'blog'
-    folder: 'content/blogPosts'
+    name: 'project'
+    folder: 'content/projectPosts'
     create: true
     slug: '{{slug}}'
     fields:

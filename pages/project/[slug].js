@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import Layout from '../../../components/layout'
+import Layout from '../../components/layout'
 
 const Post = ({ blogpost }) => {
   if (!blogpost) return <div>not found</div>
@@ -28,7 +28,7 @@ const Post = ({ blogpost }) => {
 
 export async function getStaticPaths() {
   const paths = fs
-    .readdirSync(path.join(process.cwd(), 'content/blogPosts'))
+    .readdirSync(path.join(process.cwd(), 'content/projectPosts'))
     .map((blogName) => {
       const trimmedName = blogName.substring(0, blogName.length - 3)
       return {
@@ -45,7 +45,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const { slug } = params
 
-  const blogpost = await import(`../../../content/blogPosts/${slug}.md`).catch(
+  const blogpost = await import(`../../content/projectPosts/${slug}.md`).catch(
     () => null
   )
 
