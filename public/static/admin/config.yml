@@ -17,18 +17,11 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Publish Date', name: 'date', widget: 'datetime' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
-      - label: 'About'
-        name: 'about'
-        file: 'content/about.md'
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-          - { label: 'Body', name: 'body', widget: 'markdown' }
-  - label: 'Blog'
+  - label: 'Project'
     name: 'blog'
     folder: 'content/blogPosts'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
+    slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - {
@@ -37,10 +30,9 @@ collections:
           widget: 'datetime',
           required: true,
         }
-      - {
-          label: 'Featured Image',
-          name: 'thumbnail',
-          widget: 'image',
-          required: true,
-        }
+      - { label: 'Tag', name: 'tag', widget: 'string' }
+      - { label: 'Awwwards', name: 'awwwards', widget: 'list', field: {label: 'Name', name: 'name', widget: 'string'} }
+      - { label: 'Role', name: 'role', widget: 'string' }
+      - { label: 'Commisioned by', name: 'commisioned-by', widget: 'string' }
+      - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }

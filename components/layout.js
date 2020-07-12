@@ -6,11 +6,8 @@ const Layout = ({ children }) => (
       <Link href="/">
         <a>home</a>
       </Link>
-      <Link href="/blog">
-        <a>blog</a>
-      </Link>
-      <Link href="/about">
-        <a>about</a>
+      <Link href="/projects">
+        <a>projects</a>
       </Link>
     </nav>
     <main>{children}</main>
