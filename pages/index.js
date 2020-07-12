@@ -1,5 +1,8 @@
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
+import Awards from '../components/awards/awards'
 import Link from 'next/link'
+import classNames from 'classnames'
+import s from './index.module.scss'
 import { attributes, html } from '../content/home.md'
 
 const importprojectPosts = async () => {
@@ -17,28 +20,34 @@ const importprojectPosts = async () => {
   )
 }
 
-const Home = ({postsList}) => (
-  <Layout>
-    {postsList.map((post) => (
-      <div key={post.slug} className="post">
-        <Link href="/project/[slug]" as={`/project/${post.slug}`}>
-          <a>
-            <img src={post.attributes.thumbnail} />
-            <h2>{post.attributes.title}</h2>
-          </a>
-        </Link>
-      </div>
-    ))}
-    <div dangerouslySetInnerHTML={{ __html: html }} />
-    <style jsx>{`
-      h1,
-      div {
-        text-align: center;
-      }
-    `}</style>
-  </Layout>
-)
+const Home = ({ postsList }) => {
+  const awards = postsList.reduce(({ attributes }) => {})
 
+  return (
+    <Layout>
+      <ul>
+        {postsList.map((post) => (
+          <li className={s.projectCard} key={post.slug}>
+            <Link href="/project/[slug]" as={`/project/${post.slug}`}>
+              <a>
+                <h2 className={classNames(`projectTitle`)}>
+                  {post.attributes.title}
+                </h2>
+                <h3 className={classNames(`projectSubtitle`)}>
+                  {post.attributes.tag}
+                </h3>
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <Awards awards={awards} />
+
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </Layout>
+  )
+}
 
 export async function getStaticProps() {
   const postsList = await importprojectPosts()
