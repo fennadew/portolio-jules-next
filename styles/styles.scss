@@ -1,0 +1,18 @@
+@import './init/_reset';
+@import './init/_vars';
+@import './init/_mixins';
+@import './init/_fonts';
+
+html {
+	font-size: 100%;
+}
+
+body {
+	-webkit-overflow-scrolling: touch;
+	color: $black;
+	width: 100%;
+	font-size: 1em;
+	line-height: 0.97;
+	letter-spacing: -0.03em;
+	background-color: $orange;
+}
