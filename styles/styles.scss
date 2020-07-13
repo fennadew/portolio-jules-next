@@ -4,15 +4,30 @@
 @import './init/_fonts';
 
 html {
-	font-size: 100%;
+  font-size: 100%;
 }
 
 body {
-	-webkit-overflow-scrolling: touch;
-	color: $black;
-	width: 100%;
-	font-size: 1em;
-	line-height: 0.97;
-	letter-spacing: -0.03em;
-	background-color: $orange;
+  -webkit-overflow-scrolling: touch;
+  color: $black;
+  width: 100%;
+  background-color: $orange;
+
+  font-size: 1em;
+  line-height: 0.97;
+  letter-spacing: -0.03em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.screen-readers-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect($black, 0);
+  white-space: nowrap;
+  border: 0;
 }

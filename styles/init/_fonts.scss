@@ -1,121 +1,119 @@
-
 @font-face {
-    font-family: 'InterVariable';
-    src: url('/fonts/inter/inter.var.woff2') format('woff2');
-    font-weight: 1 999;
-}
-
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/fonts/inter/inter-regular.woff2') format('woff2'),
-        url('/fonts/inter/inter-regular.woff') format('woff'),
-        url('/fonts/inter/inter-regular.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-@font-face {
-    font-family: 'Inter';
-    src: url('/fonts/inter/inter-extrabold.woff2') format('woff2'),
-        url('/fonts/inter/inter-extrabold.woff') format('woff'),
-        url('/fonts/inter/inter-extrabold.otf') format('otf');
-    font-weight: 800;
-    font-style: normal;
+  font-family: 'InterVariable';
+  src: url('/fonts/inter/inter.var.woff2') format('woff2');
+  font-weight: 1 999;
 }
 
 @font-face {
-    font-family: 'Inter';
-    src: url('/fonts/inter/inter-extrabolditalic.woff2') format('woff2'),
-        url('/fonts/inter/inter-extrabolditalic.woff') format('woff'),
-        url('/fonts/inter/inter-extrabolditalic.otf') format('otf');
-    font-weight: 800;
-    font-style: normal;
+  font-family: 'Inter';
+  src: url('/fonts/inter/inter-regular.woff2') format('woff2'),
+    url('/fonts/inter/inter-regular.woff') format('woff'),
+    url('/fonts/inter/inter-regular.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/inter-extrabold.woff2') format('woff2'),
+    url('/fonts/inter/inter-extrabold.woff') format('woff'),
+    url('/fonts/inter/inter-extrabold.otf') format('otf');
+  font-weight: 800;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: 'HelveticaNeue';
-    src: url('/fonts/helvetica-neue/helvetica-neue-medium.woff2') format('woff2'),
-            url('/fonts/helvetica-neue/helvetica-neue-medium.woff') format('woff'),
-            url('/fonts/helvetica-neue/helvetica-neue-medium.ttf') format('truetype');
-    font-weight: normal; 
+  font-family: 'Inter';
+  src: url('/fonts/inter/inter-extrabolditalic.woff2') format('woff2'),
+    url('/fonts/inter/inter-extrabolditalic.woff') format('woff'),
+    url('/fonts/inter/inter-extrabolditalic.otf') format('otf');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('/fonts/helvetica-neue/helvetica-neue-medium.woff2') format('woff2'),
+    url('/fonts/helvetica-neue/helvetica-neue-medium.woff') format('woff'),
+    url('/fonts/helvetica-neue/helvetica-neue-medium.ttf') format('truetype');
+  font-weight: normal;
 }
 
 // @font-face {
 //     font-family: 'SourceSans';
 //     src: url('/fonts/source-sans-semibold.woff2') format('woff2'),
 //             url('source-sans-semibold.woff') format('woff');
-//     font-weight: 600; 
+//     font-weight: 600;
 // }
 
-.projectTitle--big {
-    font-family: 'Inter', 'Helvetica', 'Georgia';
-    font-weight: 800;
-    font-size: px-em(568);
+.project-title--big {
+  font-family: 'Inter', 'Helvetica', 'Georgia';
+  font-weight: 800;
+  font-size: px-rem(568);
 
-    @supports (font-variation-settings: normal) {
-        font-family: 'InterVariable', 'Helvetica', 'Georgia';
-    }
+  @supports (font-variation-settings: normal) {
+    font-family: 'InterVariable', 'Helvetica', 'Georgia';
+  }
 }
 
-.projectTitle {
-    font-family: 'Inter', 'Helvetica', 'Georgia';
-    font-size: px-em(180);
-    line-height: 1;
-    letter-spacing: -0.07em;
-    font-weight: 800;
+.project-title {
+  font-family: 'Inter', 'Helvetica', 'Georgia';
+  font-size: px-rem(180);
+  line-height: 1;
+  letter-spacing: -0.07em;
+  font-weight: 800;
 
-    @supports (font-variation-settings: normal) {
-        font-family: 'InterVariable', 'Helvetica', 'Georgia';
-        font-variation-settings: 'wght' 800;
-        transition: font-variation-settings 300ms ease-in-out;
+  @supports (font-variation-settings: normal) {
+    font-family: 'InterVariable', 'Helvetica', 'Georgia';
+    font-variation-settings: 'wght' 800;
+    transition: font-variation-settings 300ms ease-in-out;
 
-        @media (hover: hover) {
-            &:hover {
-                font-variation-settings: 'wght' 400;
-            }
-        }
+    @media (hover: hover) {
+      &:hover {
+        font-variation-settings: 'wght' 400;
+      }
     }
+  }
 }
 
-.projectSubtitle {
-    font-family: 'Inter', 'Helvetica', 'Georgia';
-    font-size: px-em(21);
-    line-height: 0.97;
-    letter-spacing: -0.03em;
+.project-tag {
+  font-family: 'Inter', 'Helvetica', 'Georgia';
+  font-size: px-rem(21);
+  line-height: 0.97;
+  letter-spacing: -0.03em;
 
-    @supports (font-variation-settings: normal) {
-        font-family: 'InterVariable', 'Helvetica', 'Georgia';
-    }
+  @supports (font-variation-settings: normal) {
+    font-family: 'InterVariable', 'Helvetica', 'Georgia';
+  }
 }
 
 .heading {
-    font-size: px-em(28);
-    line-height: 0.97;
-    letter-spacing: -0.03em;
+  font-family: 'Inter', 'Helvetica', 'Georgia';
+  font-weight: normal;
+  font-size: px-rem(28);
+  line-height: 0.97;
 }
 
 .logo {
-    font-family: 'HelveticaNeue', 'Helvetica', 'Georgia';
-    font-size: px-em(20);
-    line-height: 0.97;
-    letter-spacing: -0.03em;
+  font-family: 'HelveticaNeue', 'Helvetica', 'Georgia';
+  font-size: px-rem(20);
+  line-height: 0.97;
 }
 
 .text--big {
-    font-size: px-em(96);
-    line-height: 1.04;
-    letter-spacing: -.03em;
+  font-size: px-rem(96);
+  line-height: 1.04;
 }
 
 .text {
-    font-size: px-em(30);
+  font-size: px-rem(30);
+}
+
+.sup {
+  font-size: px-rem(34);
 }
 
 a {
-    color: $black;
-    text-decoration: none;
-
+  color: $black;
+  text-decoration: none;
 }

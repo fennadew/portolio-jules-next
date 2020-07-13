@@ -1,4 +1,7 @@
+@function px-rem($px, $base: $em-base) {
+  @return ($px / $base) + 0rem;
+}
 
-@function px-em($px, $base: $em-base) {
-    @return ($px / $base) + 0em;
+@function grid-column($cols) {
+  @return ($cols / 50) * 100vw;
 }

@@ -1,14 +1,33 @@
+import PropTypes from 'prop-types'
+import classNames from 'classnames'
+
 import s from './awards.module.scss'
 
-const Awards = () => {
+const Awards = ({ awards }) => {
   return (
-    <section>
-      <h3 className={`heading`}>Awards &amp; features</h3>
+    <section className={s.container}>
+      <h1 className={`heading`}>{`Awards & features`}</h1>
+
       <ul>
-        <li></li>
+        {awards.map(({ title, count }) => (
+          <li className={classNames(s.award, `text--big`)} key={title}>
+            <div>
+              {title}
+              <sup className={classNames(s.count, `sup`)}>{`(${count})`}</sup>
+            </div>
+          </li>
+        ))}
       </ul>
     </section>
   )
+}
+
+Awards.propTypes = {
+  awards: PropTypes.array,
+}
+
+Awards.defaultProps = {
+  awards: [],
 }
 
 export default Awards

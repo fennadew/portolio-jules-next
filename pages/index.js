@@ -1,9 +1,13 @@
+import classNames from 'classnames'
+
 import Layout from '../components/layout/layout'
 import Awards from '../components/awards/awards'
-import Link from 'next/link'
-import classNames from 'classnames'
+import Projects from '../components/projects/projects'
+import About from '../components/about/about'
+
+import { html } from '../content/home.md'
+
 import s from './index.module.scss'
-import { attributes, html } from '../content/home.md'
 
 const importprojectPosts = async () => {
   // https://webpack.js.org/guides/dependency-management/#requirecontext
@@ -20,41 +24,46 @@ const importprojectPosts = async () => {
   )
 }
 
-const Home = ({ postsList }) => {
-  const awards = postsList.reduce(({ attributes }) => {})
+const setTotalAwards = (totalAwards, { attributes: projectAttributes = {} }) => {
+  const { awwwards: projectAwards = [] } = projectAttributes
+
+  const addToTotalAwards = (projectAward) => {
+    const findMatch = ({ title }) => title === projectAward
+    const awardIndex = totalAwards.findIndex(findMatch)
+
+    if (awardIndex === -1) {
+      totalAwards.push({ title: projectAward, count: 1 })
+    } else {
+      totalAwards = totalAwards.map(({ title, count }) => ({
+        ...title,
+        count: count + 1,
+      }))
+    }
+  }
+
+  projectAwards.forEach(addToTotalAwards)
+
+  return totalAwards
+}
+
+const Home = ({ projectsList }) => {
+  const awards = projectsList.reduce(setTotalAwards, [])
 
   return (
     <Layout>
-      <ul>
-        {postsList.map((post) => (
-          <li className={s.projectCard} key={post.slug}>
-            <Link href="/project/[slug]" as={`/project/${post.slug}`}>
-              <a>
-                <h2 className={classNames(`projectTitle`)}>
-                  {post.attributes.title}
-                </h2>
-                <h3 className={classNames(`projectSubtitle`)}>
-                  {post.attributes.tag}
-                </h3>
-              </a>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
+      <Projects projects={projectsList} />
       <Awards awards={awards} />
-
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <About html={html} />
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-  const postsList = await importprojectPosts()
+  const projectsList = await importprojectPosts()
 
   return {
     props: {
-      postsList,
+      projectsList,
     }, // will be passed to the page component as props
   }
 }
