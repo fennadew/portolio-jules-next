@@ -1,0 +1,20 @@
+@import '../../styles/init/vars';
+@import '../../styles/init/mixins';
+
+.container {
+  position: relative;
+  display: inline-block;
+  padding: grid-column(0.5) grid-column(6) grid-column(3) grid-column(0.5);
+  margin: grid-column(1) grid-column(0.5);
+
+  background-color: $white;
+}
+
+.tag {
+  position: absolute;
+  bottom: 0;
+  right: calc(#{grid-column(0.5)} + 0.5em);
+
+  transform-origin: left;
+  transform: translate3d(100%, 0, 0) rotate(-90deg);
+}
