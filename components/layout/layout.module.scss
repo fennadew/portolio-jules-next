@@ -1,6 +1,15 @@
+@import '../../styles/init/mixins';
+
+.container {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
 .logoLink {
   display: block;
   text-decoration: none;
 
   width: 10em;
+  padding: grid-column(1);
 }
