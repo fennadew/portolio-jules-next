@@ -10,7 +10,7 @@ const Awards = ({ awards }) => {
 
       <ul>
         {awards.map(({ title, count }) => (
-          <li className={classNames(s.award, `text--big`)} key={title}>
+          <li className={classNames(s.award, `b1`)} key={title}>
             <div>
               {title}
               <sup className={classNames(s.count, `sup`)}>{`(${count})`}</sup>
