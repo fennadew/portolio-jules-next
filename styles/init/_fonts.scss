@@ -46,7 +46,7 @@
 //     font-weight: 600;
 // }
 
-.project-title--big {
+.h1 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
   font-weight: 800;
   font-size: px-rem(568);
@@ -56,7 +56,7 @@
   }
 }
 
-.project-title {
+.h2 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
   font-size: px-rem(180);
   line-height: 1;
@@ -76,22 +76,21 @@
   }
 }
 
-.project-tag {
-  font-family: 'Inter', 'Helvetica', 'Georgia';
-  font-size: px-rem(21);
-  line-height: 0.97;
-  letter-spacing: -0.03em;
-
-  @supports (font-variation-settings: normal) {
-    font-family: 'InterVariable', 'Helvetica', 'Georgia';
-  }
-}
-
-.heading {
+.h3 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
   font-weight: normal;
   font-size: px-rem(28);
   line-height: 0.97;
+}
+
+.tag {
+  font-family: 'Inter', 'Helvetica', 'Georgia';
+  font-size: px-rem(21);
+  line-height: 0.97;
+
+  @supports (font-variation-settings: normal) {
+    font-family: 'InterVariable', 'Helvetica', 'Georgia';
+  }
 }
 
 .logo {
@@ -100,12 +99,12 @@
   line-height: 0.97;
 }
 
-.text--big {
+.b1 {
   font-size: px-rem(96);
   line-height: 1.04;
 }
 
-.text {
+.b2 {
   font-size: px-rem(30);
 }
 
