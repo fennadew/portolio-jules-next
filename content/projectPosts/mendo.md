@@ -2,11 +2,14 @@
 title: Mendo
 date: 2020-07-12T12:44:33.352Z
 tag: Platform design
+awards:
+  - Webby award
+  - Awwwards - E-commerce of the Year
+role: Lead designer
+commisioned-by: Build in Amsterdam
 awwwards:
   - Webby
   - Awwwards - Ecommerce of the Year
-role: Lead designer
-commisioned-by: Build in Amsterdam
 link: https://www.mendo.nl/
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi sed nibh hendrerit imperdiet. Praesent vitae hendrerit ipsum.\
