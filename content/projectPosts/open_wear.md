@@ -2,10 +2,13 @@
 title: Open Wear
 date: 2020-07-12T12:46:42.702Z
 tag: Platform design
-awwwards:
-  - Awwwards - Site of the month
+awards:
+  - Awwwards - E-commerce of the Year
+  - Awwwards - site of the month
 role: Lead Designer
 commisioned-by: Build in Amsterdam
+awwwards:
+  - Awwwards - Site of the month
 link: https://www.open-wear.com/
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vehicula nisi sed nibh hendrerit imperdiet. Praesent vitae hendrerit ipsum.\
