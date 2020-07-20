@@ -14,8 +14,6 @@ const projectCard = ({ project, index }) => {
   const generateRandomSeed = seedRandom(5, { entropy: true })
   const randomSeed = generateRandomSeed()
 
-  console.log(randomSeed)
-
   const pickRandomDeg = (number) => {
     const max = 10
 
@@ -27,7 +25,7 @@ const projectCard = ({ project, index }) => {
   return (
     <li style={{ transform: `rotate(${rotation}deg)` }} className={s.container}>
       <Link href="/project/[slug]" as={`/project/${slug}`}>
-        <a>
+        <a className={s.link}>
           <h2 className={classNames(s.title, `h2`)}>{title}</h2>
           <span className={classNames(s.tag, `tag`)}>{tag}</span>
         </a>

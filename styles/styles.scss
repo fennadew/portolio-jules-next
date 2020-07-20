@@ -21,6 +21,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+a {
+  color: $black;
+  text-decoration: none;
+  display: inline-block;
+}
+
 .screen-readers-only {
   position: absolute;
   width: 1px;

@@ -39,17 +39,65 @@
   font-weight: normal;
 }
 
-// @font-face {
-//     font-family: 'SourceSans';
-//     src: url('/fonts/source-sans-semibold.woff2') format('woff2'),
-//             url('source-sans-semibold.woff') format('woff');
-//     font-weight: 600;
-// }
+@font-face {
+  font-family: 'GTAlpina';
+  src: url('/fonts/alpina/gt-alpina-thin.woff2') format('woff2'),
+    url('/fonts/alpina/gt-alpina-thin.woff') format('woff'),
+    url('/fonts/alpina/gt-alpina-thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTAlpina';
+  src: url('/fonts/alpina/gt-alpina-thin-italic.woff2') format('woff2'),
+    url('/fonts/alpina/gt-alpina-thin-italic.woff') format('woff'),
+    url('/fonts/alpina/gt-alpina-thin-italic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GTAlpina';
+  src: url('/fonts/alpina/gt-alpina-light.woff2') format('woff2'),
+    url('/fonts/alpina/gt-alpina-light.woff') format('woff'),
+    url('/fonts/alpina/gt-alpina-light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTAlpina';
+  src: url('/fonts/alpina/gt-alpina-light-italic.woff2') format('woff2'),
+    url('/fonts/alpina/gt-alpina-light-italic.woff') format('woff'),
+    url('/fonts/alpina/gt-alpina-light-italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GTAlpinaCondensed';
+  src: url('/fonts/alpina/gt-alpina-thin-condensed.woff2') format('woff2'),
+    url('/fonts/alpina/gt-alpina-thin-condensed.woff') format('woff'),
+    url('/fonts/alpina/gt-alpina-thin-condensed.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTAlpinaCondensed';
+  src: url('/fonts/alpina/gt-alpina-light-condensed-italic.woff2') format('woff2'),
+    url('/fonts/alpina/gt-alpina-light-condensed-italic.woff') format('woff'),
+    url('/fonts/alpina/gt-alpina-light-condensed-italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
 
 .h1 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
-  font-weight: 800;
   font-size: px-rem(568);
+  letter-spacing: -0.03em;
+  font-weight: 800;
 
   @supports (font-variation-settings: normal) {
     font-family: 'InterVariable', 'Helvetica', 'Georgia';
@@ -78,41 +126,54 @@
 
 .h3 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
-  font-weight: normal;
   font-size: px-rem(28);
   line-height: 0.97;
+  letter-spacing: -0.07em;
+}
+
+.h4 {
+  font-family: 'GTAlpinaCondensed', 'Helvetica', 'Georgia';
+  font-size: px-rem(28);
+  line-height: 0.97;
+  letter-spacing: -0.03em;
 }
 
 .tag {
-  font-family: 'Inter', 'Helvetica', 'Georgia';
+  font-family: 'GTAlpina', 'Helvetica', 'Georgia';
   font-size: px-rem(21);
   line-height: 0.97;
+  letter-spacing: -0.03em;
+  font-weight: 200;
+}
 
-  @supports (font-variation-settings: normal) {
-    font-family: 'InterVariable', 'Helvetica', 'Georgia';
-  }
+.b1 {
+  font-family: 'GTAlpina', 'Helvetica', 'Georgia';
+  font-size: px-rem(96);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+}
+
+.b2 {
+  font-family: 'GTAlpinaCondensed', 'Helvetica', 'Georgia';
+  font-size: px-rem(30);
+  font-weight: 200;
+  letter-spacing: -0.03em;
 }
 
 .logo {
   font-family: 'HelveticaNeue', 'Helvetica', 'Georgia';
   font-size: px-rem(20);
   line-height: 0.97;
-}
-
-.b1 {
-  font-size: px-rem(96);
-  line-height: 1.04;
-}
-
-.b2 {
-  font-size: px-rem(30);
+  letter-spacing: -0.02em;
 }
 
 .sup {
+  font-family: 'GTAlpina', 'Helvetica', 'Georgia';
   font-size: px-rem(34);
+  font-weight: 200;
+  letter-spacing: -0.03em;
 }
 
-a {
-  color: $black;
-  text-decoration: none;
+.link {
+  border-bottom: 1px solid $black;
 }

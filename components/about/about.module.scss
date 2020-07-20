@@ -1,6 +1,7 @@
 @import '../../styles/init/mixins';
 
 .container {
-  margin-left: grid-column(19);
   width: grid-column(30);
+  padding: grid-column(1);
+  margin-left: grid-column(18);
 }
