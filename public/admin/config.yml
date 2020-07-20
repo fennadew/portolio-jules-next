@@ -24,14 +24,14 @@ collections:
     slug: '{{slug}}'
     fields:
       - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - {
-          label: 'Publish Date',
-          name: 'date',
-          widget: 'datetime',
-          required: true,
-        }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', required: true }
       - { label: 'Tag', name: 'tag', widget: 'string' }
-      - { label: 'Awwwards', name: 'awwwards', widget: 'list', field: {label: 'Name', name: 'name', widget: 'string'} }
+      - {
+          label: 'Awards',
+          name: 'awards',
+          widget: 'list',
+          field: { label: 'Name', name: 'name', widget: 'string' },
+        }
       - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Commisioned by', name: 'commisioned-by', widget: 'string' }
       - { label: 'Link', name: 'link', widget: 'string' }
