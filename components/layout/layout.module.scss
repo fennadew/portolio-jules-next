@@ -6,9 +6,12 @@
   width: 100%;
 }
 
+.menu {
+  padding: grid-column(1);
+}
+
 .logoLink {
   text-decoration: none;
 
   width: 10em;
-  padding: grid-column(1);
 }

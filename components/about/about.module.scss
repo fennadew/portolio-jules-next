@@ -1,7 +1,12 @@
 @import '../../styles/init/mixins';
+@import '../../styles/init/vars';
 
 .container {
   width: grid-column(30);
   padding: grid-column(1);
   margin-left: grid-column(18);
+
+  a {
+    border-bottom: 1px solid $black;
+  }
 }

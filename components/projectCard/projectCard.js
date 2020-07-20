@@ -25,8 +25,8 @@ const projectCard = ({ project, index }) => {
   return (
     <li style={{ transform: `rotate(${rotation}deg)` }} className={s.container}>
       <Link href="/project/[slug]" as={`/project/${slug}`}>
-        <a className={s.link}>
-          <h2 className={classNames(s.title, `h2`)}>{title}</h2>
+        <a className={classNames(s.link, `h2`)}>
+          <h2 className={s.title}>{title}</h2>
           <span className={classNames(s.tag, `tag`)}>{tag}</span>
         </a>
       </Link>

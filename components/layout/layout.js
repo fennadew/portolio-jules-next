@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
   return (
     <div className={s.container}>
       <div ref={setupRafScroll} className={s.scrollEl} onWheel={onWheel}>
-        <nav>
+        <nav className={s.menu}>
           <Link href="/">
             <a
               className={classNames(s.logoLink, `logo`)}

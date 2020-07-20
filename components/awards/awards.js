@@ -6,7 +6,7 @@ import s from './awards.module.scss'
 const Awards = ({ awards }) => {
   return (
     <section className={s.container}>
-      <h1 className={`h3`}>{`Awards & features`}</h1>
+      <h1 className={classNames(s.heading, `h3`)}>{`Awards & features`}</h1>
 
       <ul>
         {awards.map(({ title, count }) => (

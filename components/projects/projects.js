@@ -5,7 +5,7 @@ const Projects = ({ projects }) => {
   return (
     <section>
       <h1 className={`screen-readers-only`}>{`Projects`}</h1>
-      <ul>
+      <ul className={s.list}>
         {projects.map((project = {}, index) => {
           const { slug } = project
 

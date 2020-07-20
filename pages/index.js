@@ -7,10 +7,7 @@ import About from '../components/about/about'
 
 import { html } from '../content/home.md'
 
-import s from './index.module.scss'
-
 const importprojectPosts = async () => {
-  // https://webpack.js.org/guides/dependency-management/#requirecontext
   const markdownFiles = require
     .context('../content/projectPosts', false, /\.md$/)
     .keys()
@@ -24,15 +21,12 @@ const importprojectPosts = async () => {
   )
 }
 
-const setTotalAwards = (totalAwards, { attributes: projectAttributes = {} }) => {
-  const { awwwards: projectAwards = [] } = projectAttributes
-
-  const addToTotalAwards = (projectAward) => {
-    const findMatch = ({ title }) => title === projectAward
-    const awardIndex = totalAwards.findIndex(findMatch)
+const setTotalAwards = (totalAwards, { attributes: { awards = [] } }) => {
+  const addToTotalAwards = (award) => {
+    const awardIndex = totalAwards.findIndex(({ title }) => title === award)
 
     if (awardIndex === -1) {
-      totalAwards.push({ title: projectAward, count: 1 })
+      totalAwards.push({ title: award, count: 1 })
     } else {
       totalAwards = totalAwards.map(({ title, count }) => ({
         ...title,
@@ -41,7 +35,7 @@ const setTotalAwards = (totalAwards, { attributes: projectAttributes = {} }) => 
     }
   }
 
-  projectAwards.forEach(addToTotalAwards)
+  awards.forEach(addToTotalAwards)
 
   return totalAwards
 }
