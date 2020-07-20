@@ -22,14 +22,16 @@ const importprojectPosts = async () => {
 }
 
 const setTotalAwards = (totalAwards, { attributes: { awards = [] } }) => {
+  console.log(totalAwards)
+
   const addToTotalAwards = (award) => {
     const awardIndex = totalAwards.findIndex(({ title }) => title === award)
 
     if (awardIndex === -1) {
-      totalAwards.push({ title: award, count: 1 })
+      totalAwards = [...totalAwards, { title: award, count: 1 }]
     } else {
       totalAwards = totalAwards.map(({ title, count }) => ({
-        ...title,
+        title,
         count: count + 1,
       }))
     }
