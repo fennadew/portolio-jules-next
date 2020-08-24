@@ -3,6 +3,8 @@
 @import './init/_mixins';
 @import './init/_fonts';
 
+@import './vendor/_locomotive';
+
 html {
   font-size: 100%;
 }
