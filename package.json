@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "locomotive-scroll": "^3.5.4",
     "next": "latest",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
