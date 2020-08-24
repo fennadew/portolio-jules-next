@@ -1,27 +1,26 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
-
-import { RafScroll } from '../../utils/utils'
 
 import s from './layout.module.scss'
 
 const Layout = ({ children }) => {
-  const rafScroll = new RafScroll()
-
-  const setupRafScroll = (ref) => {
-    rafScroll && rafScroll.setup(ref)
-  }
-
-  const onWheel = (event) => {
-    rafScroll && rafScroll.onWheel(event)
-  }
-
   const year = useRef(new Date().getFullYear())
+
+  const scrollRef = useRef()
+
+  useEffect(() => {
+    import('locomotive-scroll').then((locomotiveModule) => {
+      const scroll = new locomotiveModule.default({
+        el: scrollRef.current,
+        smooth: true,
+      })
+    })
+  }, [])
 
   return (
     <div className={s.container}>
-      <div ref={setupRafScroll} className={s.scrollEl} onWheel={onWheel}>
+      <div ref={scrollRef} className={s.scrollEl}>
         <nav className={s.menu}>
           <Link href="/">
             <a
