@@ -35,6 +35,12 @@ collections:
       - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Commisioned by', name: 'commisioned-by', widget: 'string' }
       - { label: 'Link', name: 'link', widget: 'string' }
-      - { label: 'Rotation', name: 'rotation', widget: 'number' }, 
-      - { label: 'Align Content', name: 'align', widget: 'select', options: ['left', 'right'], default: 'left' }, 
+      - { label: 'Rotation', name: 'rotation', widget: 'number' }
+      - {
+          label: 'Align Content',
+          name: 'align',
+          widget: 'select',
+          options: ['left', 'right'],
+          default: 'left',
+        }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
