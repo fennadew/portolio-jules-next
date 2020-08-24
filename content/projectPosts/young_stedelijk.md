@@ -6,5 +6,7 @@ awards: []
 role: Photographer
 commisioned-by: Freelance
 link: dsf
+rotation: 0
+align: left
 ---
 sdfsdf
