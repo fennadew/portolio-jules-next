@@ -22,8 +22,6 @@ const importprojectPosts = async () => {
 }
 
 const setTotalAwards = (totalAwards, { attributes: { awards = [] } }) => {
-  console.log(totalAwards)
-
   const addToTotalAwards = (award) => {
     const awardIndex = totalAwards.findIndex(({ title }) => title === award)
 

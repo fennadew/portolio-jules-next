@@ -1,7 +1,7 @@
 @import '../../styles/init/mixins';
 
 .container {
-  padding: grid-column(1);
+  padding: grid-column(5) grid-column(1) grid-column(1);
 }
 
 .heading {

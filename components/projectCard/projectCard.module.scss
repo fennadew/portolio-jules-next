@@ -1,16 +1,9 @@
 @import '../../styles/init/vars';
 @import '../../styles/init/mixins';
 
-.container {
-  position: relative;
-  margin: grid-column(1) grid-column(0.5);
-
-  background-color: $white;
-}
-
 .link {
-  padding: grid-column(0.5) grid-column(6) grid-column(3) grid-column(0.5);
   height: 100%;
+  padding: grid-column(0.5) grid-column(6) grid-column(3) grid-column(0.5);
 }
 
 .tag {
@@ -20,4 +13,23 @@
 
   transform-origin: left;
   transform: translate3d(100%, 0, 0) rotate(-90deg);
+}
+
+.title {
+  white-space: nowrap;
+
+  @supports (font-variation-settings: normal) {
+    transition: font-variation-settings 300ms ease-in-out, font-size 600ms ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        font-variation-settings: 'wght' 400, 'slnt' 0;
+      }
+    }
+
+    &.isOpen {
+      font-size: px-rem(580);
+      font-variation-settings: 'wght' 800, 'slnt' -10;
+    }
+  }
 }

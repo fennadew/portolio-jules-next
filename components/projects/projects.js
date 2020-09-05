@@ -1,4 +1,4 @@
-import ProjectCard from '../projectCard/projectCard'
+import Project from '../project/project'
 import s from './projects.module.scss'
 
 const Projects = ({ projects }) => {
@@ -6,10 +6,10 @@ const Projects = ({ projects }) => {
     <section>
       <h1 className={`screen-readers-only`}>{`Projects`}</h1>
       <ul className={s.list}>
-        {projects.map((project = {}, index) => {
+        {projects.map((project = {}) => {
           const { slug } = project
 
-          return <ProjectCard key={slug} project={project} index={index} />
+          return <Project key={slug} project={project} />
         })}
       </ul>
     </section>

@@ -3,7 +3,7 @@
 
 .container {
   width: grid-column(30);
-  padding: grid-column(1);
+  padding: grid-column(8) grid-column(1) grid-column(1);
   margin-left: grid-column(18);
 
   a {

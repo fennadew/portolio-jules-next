@@ -113,14 +113,7 @@
 
   @supports (font-variation-settings: normal) {
     font-family: 'InterVariable', 'Helvetica', 'Georgia';
-    font-variation-settings: 'wght' 800;
-    transition: font-variation-settings 300ms ease-in-out;
-
-    @media (hover: hover) {
-      &:hover {
-        font-variation-settings: 'wght' 400;
-      }
-    }
+    font-variation-settings: 'wght' 800, 'slnt' 0;
   }
 }
 
