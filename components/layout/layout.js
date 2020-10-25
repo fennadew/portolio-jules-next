@@ -3,12 +3,15 @@ import classNames from 'classnames'
 import Link from 'next/link'
 
 import s from './layout.module.scss'
+import useResizeObserver from '../../hooks/useResizeObserver'
 
 const Layout = ({ children }) => {
   const year = useRef(new Date().getFullYear())
 
   const scrollContainer = useRef()
   const scroll = useRef()
+
+  const ref = useResizeObserver(() => scroll.current?.update())
 
   useEffect(() => {
     import('locomotive-scroll').then((locomotiveModule) => {
@@ -30,7 +33,7 @@ const Layout = ({ children }) => {
           >{`JULIAN MOLLEMA "CREATIVE" ARCHIVE 1991-${year.current}`}</a>
         </Link>
       </nav>
-      <main>{children}</main>
+      <main ref={ref}>{children}</main>
     </div>
   )
 }

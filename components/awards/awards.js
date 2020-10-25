@@ -4,7 +4,6 @@ import classNames from 'classnames'
 import s from './awards.module.scss'
 
 const Awards = ({ awards }) => {
-  console.log(awards)
   return (
     <section className={s.container}>
       <h1 className={classNames(s.heading, `h3`)}>{`Awards & features`}</h1>

@@ -1,0 +1,27 @@
+@import '../../styles/init/mixins';
+@import '../../styles/init/vars';
+
+.container {
+  overflow: hidden;
+}
+
+.inner {
+  display: flex;
+  padding: grid-column(1);
+}
+
+.info {
+  width: grid-column(12);
+}
+
+.listItem {
+  display: inline-block;
+}
+
+.body {
+  width: grid-column(31);
+  margin-left: grid-column(5);
+}
+
+.infoTitle {
+}

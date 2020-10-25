@@ -33,7 +33,7 @@ collections:
           field: { label: 'Name', name: 'name', widget: 'string' },
         }
       - { label: 'Role', name: 'role', widget: 'string' }
-      - { label: 'Commisioned by', name: 'commisioned-by', widget: 'string' }
+      - { label: 'Commisioned by', name: 'commisionedBy', widget: 'string' }
       - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Rotation', name: 'rotation', widget: 'number' }
       - {

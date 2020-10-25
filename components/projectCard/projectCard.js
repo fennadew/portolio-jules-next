@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import s from './projectCard.module.scss'
 
-const projectCard = ({ attributes, toggleProject, onResize, isOpen }) => {
+const ProjectCard = ({ attributes, toggleProject, onResize, isOpen }) => {
   const { title = ``, tag = `` } = attributes
 
   const containerRef = useRef()
@@ -14,14 +14,14 @@ const projectCard = ({ attributes, toggleProject, onResize, isOpen }) => {
 
       containerRef.current = node
 
-      onWindowResize()
+      onWindowResize(containerRef.current)
     },
     [containerRef.current]
   )
 
-  const onWindowResize = useCallback(() => {
+  const onWindowResize = () => {
     onResize(containerRef.current)
-  }, [containerRef.current])
+  }
 
   useEffect(() => {
     window.addEventListener(`resize`, onWindowResize)
@@ -30,13 +30,16 @@ const projectCard = ({ attributes, toggleProject, onResize, isOpen }) => {
   }, [containerRef, onWindowResize])
 
   return (
-    <button ref={setRef} onClick={toggleProject} className={classNames(s.link, `h2`)}>
+    <button onClick={toggleProject} className={classNames(s.link, `h2`)}>
       <div>
         <h2 className={classNames(s.title, isOpen && s.isOpen)}>{title}</h2>
+        <div ref={setRef} className={classNames(s.title, s.shadow)}>
+          {title}
+        </div>
         <span className={classNames(s.tag, `tag`)}>{tag}</span>
       </div>
     </button>
   )
 }
 
-export default projectCard
+export default ProjectCard

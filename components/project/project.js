@@ -4,13 +4,11 @@ import { motion } from 'framer-motion'
 import classNames from 'classnames'
 
 import ProjectCard from '../projectCard/projectCard'
-import ProjectDetails from '../ProjectDetails/ProjectDetails'
+import ProjectDetails from '../projectDetails/projectDetails'
 
 import s from './project.module.scss'
 
-const transition = { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.9] }
-
-const project = ({ project }) => {
+const Project = ({ project }) => {
   const { attributes = {} } = project
   const { rotation = 0, align } = attributes
 
@@ -19,6 +17,7 @@ const project = ({ project }) => {
     setIsOpen(!isOpen)
   }, [isOpen])
 
+  const transition = { duration: 0.5, ease: [0.6, 0.01, -0.05, 0.9], delay: isOpen ? 0 : 0.5 }
   const mouseEnter = useRef(false)
 
   const onMouseEnter = () => {
@@ -37,7 +36,7 @@ const project = ({ project }) => {
 
       const { width } = node.getBoundingClientRect()
 
-      setWidth(`${width}px`)
+      setWidth(width)
     },
     [setWidth, isOpen, mouseEnter]
   )
@@ -48,14 +47,15 @@ const project = ({ project }) => {
     closeHover: {},
   }
 
-  console.log(variants)
+  console.log(width)
 
   return (
     <motion.li
-      initial="close"
+      initial={`close`}
       animate={isOpen ? `open` : `close`}
       variants={variants}
       transition={transition}
+      style={{ width }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       className={classNames(s.container, s[align])}
@@ -66,9 +66,9 @@ const project = ({ project }) => {
         toggleProject={toggleProject}
         attributes={attributes}
       />
-      <ProjectDetails attributes={attributes} />
+      <ProjectDetails isOpen={isOpen} attributes={attributes} />
     </motion.li>
   )
 }
 
-export default project
+export default Project
