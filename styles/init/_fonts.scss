@@ -155,12 +155,15 @@
 }
 
 .b3 {
-  font-family: 'GTAlpina', 'Helvetica', 'Georgia';
+  font-family: 'GTAlpinaCondensed', 'Helvetica', 'Georgia';
   font-size: px-rem(23);
   line-height: 0.97;
   font-weight: 200;
-  font-style: italic;
   letter-spacing: -0.03em;
+
+  &.italic {
+    font-style: italic;
+  }
 }
 
 .logo {
@@ -175,8 +178,4 @@
   font-size: px-rem(34);
   font-weight: 200;
   letter-spacing: -0.03em;
-}
-
-.link {
-  border-bottom: 1px solid $black;
 }

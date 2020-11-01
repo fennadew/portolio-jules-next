@@ -1,5 +1,4 @@
-@import '../../styles/init/mixins';
-@import '../../styles/init/vars';
+@import '@/styles/import';
 
 .container {
   overflow: hidden;
@@ -14,14 +13,17 @@
   width: grid-column(12);
 }
 
-.listItem {
-  display: inline-block;
+.infoItem {
+  display: inline;
+}
+
+.caseLink {
+  text-decoration: underline;
+  display: block;
+  margin-top: grid-column(1);
 }
 
 .body {
   width: grid-column(31);
   margin-left: grid-column(5);
-}
-
-.infoTitle {
 }

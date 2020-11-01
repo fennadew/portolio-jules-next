@@ -1,4 +1,4 @@
-import Project from '../project/project'
+import Project from '@/components/project/project'
 import s from './projects.module.scss'
 
 const Projects = ({ projects }) => {

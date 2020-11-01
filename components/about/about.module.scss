@@ -1,5 +1,4 @@
-@import '../../styles/init/mixins';
-@import '../../styles/init/vars';
+@import '@/styles/import';
 
 .container {
   width: grid-column(30);

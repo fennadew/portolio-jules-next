@@ -1,9 +1,10 @@
 import { useRef, useEffect } from 'react'
-import classNames from 'classnames'
 import Link from 'next/link'
+import classNames from 'classnames'
+
+import useResizeObserver from '@/hooks/useResizeObserver'
 
 import s from './layout.module.scss'
-import useResizeObserver from '../../hooks/useResizeObserver'
 
 const Layout = ({ children }) => {
   const year = useRef(new Date().getFullYear())

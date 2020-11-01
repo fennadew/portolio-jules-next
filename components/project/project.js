@@ -3,8 +3,8 @@ import { useCallback, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import classNames from 'classnames'
 
-import ProjectCard from '../projectCard/projectCard'
-import ProjectDetails from '../projectDetails/projectDetails'
+import ProjectCard from '@/components/projectCard/projectCard'
+import ProjectDetails from '@/components/projectDetails/projectDetails'
 
 import s from './project.module.scss'
 
