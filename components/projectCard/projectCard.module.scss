@@ -16,7 +16,6 @@
 
 .title {
   white-space: nowrap;
-  transition: font-variation-settings 0.6s 0.5s $expoOut, font-size 0.6s $expoOut 0.5s;
 
   @supports (font-variation-settings: normal) {
     @media (hover: hover) {
@@ -29,13 +28,8 @@
       position: absolute;
       top: 0;
       left: 0;
+      padding: grid-column(0.5) grid-column(6) grid-column(3) grid-column(0.5);
       visibility: hidden;
-    }
-
-    &.isOpen {
-      font-size: px-rem(580);
-      font-variation-settings: 'wght' 800, 'slnt' -10;
-      transition: font-variation-settings 0.6s $expoOut, font-size 0.6s $expoOut;
     }
   }
 }

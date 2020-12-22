@@ -1,15 +1,19 @@
 import { useRef, useCallback, useEffect } from 'react'
 import ResizeObserver from 'resize-observer-polyfill'
 
+import debounce from 'lodash.debounce'
+
 const map = new Map()
 
-const observer = new ResizeObserver((entries) => {
-  entries.forEach((entry) => {
-    const { target } = entry
-    const callback = map.get(target)
-    callback && callback(entry)
-  })
-})
+const observer = new ResizeObserver(
+  debounce((entries) => {
+    entries.forEach((entry) => {
+      const { target } = entry
+      const callback = map.get(target)
+      callback && callback(entry)
+    })
+  }, 300)
+)
 
 const useResizeObserver = (callback) => {
   const ref = useRef()

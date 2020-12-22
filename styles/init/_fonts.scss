@@ -95,12 +95,16 @@
 
 .h1 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
-  font-size: px-rem(568);
+  font-size: px-rem(170);
   letter-spacing: -0.03em;
   font-weight: 800;
 
   @supports (font-variation-settings: normal) {
     font-family: 'InterVariable', 'Helvetica', 'Georgia';
+  }
+
+  @include breakpoint('medium') {
+    font-size: px-rem(568);
   }
 }
 

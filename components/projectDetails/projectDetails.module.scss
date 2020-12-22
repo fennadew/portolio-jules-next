@@ -2,9 +2,11 @@
 
 .container {
   overflow: hidden;
+  background-color: $white;
 }
 
 .inner {
+  position: absolute;
   display: flex;
   padding: grid-column(1);
 }

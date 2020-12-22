@@ -9,7 +9,7 @@
   transform-origin: 0 0;
 
   &.right {
-    align-self: flex-end;
+    margin-left: auto;
     transform-origin: right bottom;
   }
 }

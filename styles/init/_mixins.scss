@@ -1,7 +1,29 @@
+$breakpoints: (
+  'xsmall': 400px,
+  'small': 769px,
+  'medium': 1024px,
+  'medium-exception': 1025px,
+  'large': 1200px,
+  'xlarge': 1400px,
+  'xxlarge': 1500px,
+  'xxxlarge': 1700px,
+  'huge': 1850px,
+);
+
 @function px-rem($px, $base: $em-base) {
   @return ($px / $base) + 0rem;
 }
 
 @function grid-column($cols) {
   @return ($cols / 50) * 100vw;
+}
+
+@mixin breakpoint($width: '') {
+  @if map-has-key($breakpoints, #{$width}) {
+    @media only screen and (min-width: map-get($breakpoints, #{$width})) {
+      @content;
+    }
+  } @else {
+    @warn 'Breakpoint: width and height not found.';
+  }
 }
