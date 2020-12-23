@@ -1,31 +1,48 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classNames from 'classnames'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
+
 import useResizeObserver from '@/hooks/useResizeObserver'
 
 import s from './projectDetails.module.scss'
+import usePrevious from '@/hooks/usePrevious'
 
 const ProjectDetails = ({ attributes, isOpen }) => {
   const { awards = [], role = ``, commisionedBy = ``, link } = attributes
+  const prevIsOpen = usePrevious(isOpen)
+
+  const controls = useAnimation()
 
   const [height, setHeight] = useState(0)
 
-  const onResize = (entry) => {
+  const setRef = useResizeObserver((entry) => {
     if (!entry.target) return
 
     const { height } = entry.target.getBoundingClientRect()
 
     setHeight(height)
-  }
+  }, [])
+
+  useEffect(() => {
+    if (prevIsOpen === isOpen) return
+
+    if (isOpen) {
+      controls.start({
+        height,
+      })
+    } else {
+      controls.start({
+        height: 0,
+      })
+    }
+  }, [height, prevIsOpen, isOpen, controls])
 
   console.log(height)
-
-  const ref = useResizeObserver(onResize)
 
   return (
     <motion.article
       initial={{ height: 0 }}
-      animate={{ height: isOpen ? `auto` : 0 }}
+      animate={controls}
       transition={{ delay: isOpen ? 0.3 : 0, duration: 0.5 }}
       className={s.container}
     >
@@ -33,7 +50,7 @@ const ProjectDetails = ({ attributes, isOpen }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: isOpen ? 1 : 0 }}
         transition={{ delay: isOpen ? 0.3 : 0, duration: 0.5 }}
-        ref={ref}
+        ref={setRef}
         className={s.inner}
       >
         <aside className={s.info}>
@@ -55,7 +72,7 @@ const ProjectDetails = ({ attributes, isOpen }) => {
               className={classNames(s.caseLink, `b3`)}
               href={link}
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
             >{`See case`}</a>
           )}
         </aside>

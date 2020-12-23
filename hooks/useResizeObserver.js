@@ -1,50 +1,54 @@
 import { useRef, useCallback, useEffect } from 'react'
 import ResizeObserver from 'resize-observer-polyfill'
 
-import debounce from 'lodash.debounce'
+/**
+ * @hook Observe elements to report changes of the elements dimensions
+ *
+ * @param {function} callback - Callback when dimensions have changed
+ * @returns {function} Callback to set the ref
+ */
 
-const map = new Map()
-
-const observer = new ResizeObserver(
-  debounce((entries) => {
-    entries.forEach((entry) => {
-      const { target } = entry
-      const callback = map.get(target)
-      callback && callback(entry)
-    })
-  }, 300)
-)
+const callbackMap = new Map()
+const observer = new ResizeObserver((entries) => {
+  entries.forEach((entry) => {
+    const callback = callbackMap.get(entry.target)
+    if (typeof callback === 'function') {
+      callback(entry)
+    }
+  })
+})
 
 const useResizeObserver = (callback) => {
-  const ref = useRef()
-  const setRef = useCallback(
-    (node) => {
-      if (!node) {
-        ref.current && map.delete(ref.current)
-      } else {
-        if (ref.current !== node) {
-          if (ref.current) {
-            observer.unobserve(ref.current)
-            map.delete(ref.current)
-          }
-          observer.observe(node)
-          ref.current = node
-        }
-        map.set(node, callback)
-      }
-    },
-    [callback]
-  )
-
-  useEffect(() => {
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
-        map.delete(ref.current)
-        ref.current = false
-      }
+  const nodeRef = useRef(null)
+  const cleanUp = useCallback(() => {
+    if (nodeRef.current !== null) {
+      observer.unobserve(nodeRef.current)
+      callbackMap.delete(nodeRef.current)
     }
   }, [])
+
+  const setRef = useCallback(
+    (node) => {
+      if (node === null) {
+        if (nodeRef.current !== null) {
+          callbackMap.delete(nodeRef.current)
+        }
+      } else {
+        if (node !== nodeRef.current) {
+          cleanUp()
+
+          nodeRef.current = node
+          observer.observe(nodeRef.current)
+        }
+
+        callbackMap.set(nodeRef.current, callback)
+      }
+    },
+    [callback, cleanUp]
+  )
+
+  useEffect(() => cleanUp, [cleanUp])
+
   return setRef
 }
 
