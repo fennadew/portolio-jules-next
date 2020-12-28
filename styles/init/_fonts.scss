@@ -9,7 +9,16 @@
   src: url('/fonts/inter/inter-regular.woff2') format('woff2'),
     url('/fonts/inter/inter-regular.woff') format('woff'),
     url('/fonts/inter/inter-regular.otf') format('otf');
-  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter/inter-semibold.woff2') format('woff2'),
+    url('/fonts/inter/inter-semibold.woff') format('woff'),
+    url('/fonts/inter/inter-semibold.otf') format('otf');
+  font-weight: 600;
   font-style: normal;
 }
 
@@ -36,7 +45,7 @@
   src: url('/fonts/helvetica-neue/helvetica-neue-medium.woff2') format('woff2'),
     url('/fonts/helvetica-neue/helvetica-neue-medium.woff') format('woff'),
     url('/fonts/helvetica-neue/helvetica-neue-medium.ttf') format('truetype');
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
@@ -45,7 +54,7 @@
     url('/fonts/alpina/gt-alpina-thin.woff') format('woff'),
     url('/fonts/alpina/gt-alpina-thin.otf') format('opentype');
   font-weight: 200;
-  font-style: normal;
+  font-style: 400;
 }
 
 @font-face {
@@ -62,7 +71,7 @@
   src: url('/fonts/alpina/gt-alpina-light.woff2') format('woff2'),
     url('/fonts/alpina/gt-alpina-light.woff') format('woff'),
     url('/fonts/alpina/gt-alpina-light.otf') format('opentype');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -95,7 +104,7 @@
 
 .h1 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
-  font-size: px-rem(170);
+  font-size: get-vw(170);
   letter-spacing: -0.03em;
   font-weight: 800;
 
@@ -104,13 +113,13 @@
   }
 
   @include breakpoint('medium') {
-    font-size: px-rem(568);
+    font-size: get-vw(568);
   }
 }
 
 .h2 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
-  font-size: px-rem(180);
+  font-size: get-vw(180);
   line-height: 1;
   letter-spacing: -0.07em;
   font-weight: 800;
@@ -123,9 +132,15 @@
 
 .h3 {
   font-family: 'Inter', 'Helvetica', 'Georgia';
-  font-size: px-rem(28);
+  font-size: px-rem(14);
+  font-weight: 600;
   line-height: 0.97;
   letter-spacing: -0.07em;
+
+  @include breakpoint('small') {
+    font-size: px-rem(28);
+    font-weight: 400;
+  }
 }
 
 .h4 {
@@ -137,33 +152,49 @@
 
 .tag {
   font-family: 'GTAlpina', 'Helvetica', 'Georgia';
-  font-size: px-rem(21);
+  font-size: px-rem(9);
   line-height: 0.97;
   letter-spacing: -0.03em;
   font-weight: 200;
+
+  @include breakpoint('small') {
+    font-size: px-rem(21);
+  }
 }
 
 .b1 {
   font-family: 'GTAlpina', 'Helvetica', 'Georgia';
-  font-size: px-rem(96);
+  font-size: px-rem(34);
   line-height: 0.97;
   letter-spacing: -0.03em;
+
+  @include breakpoint('small') {
+    font-size: px-rem(96);
+  }
 }
 
 .b2 {
   font-family: 'GTAlpinaCondensed', 'Helvetica', 'Georgia';
-  font-size: px-rem(30);
+  font-size: px-rem(20);
   line-height: 0.97;
   font-weight: 200;
   letter-spacing: -0.03em;
+
+  @include breakpoint('small') {
+    font-size: px-rem(30);
+  }
 }
 
 .b3 {
   font-family: 'GTAlpinaCondensed', 'Helvetica', 'Georgia';
-  font-size: px-rem(23);
+  font-size: px-rem(14);
   line-height: 0.97;
   font-weight: 200;
   letter-spacing: -0.03em;
+
+  @include breakpoint('small') {
+    font-size: px-rem(23);
+  }
 
   &.italic {
     font-style: italic;
@@ -172,14 +203,22 @@
 
 .logo {
   font-family: 'HelveticaNeue', 'Helvetica', 'Georgia';
-  font-size: px-rem(20);
+  font-size: px-rem(11);
   line-height: 0.97;
   letter-spacing: -0.02em;
+
+  @include breakpoint('small') {
+    font-size: px-rem(20);
+  }
 }
 
 .sup {
   font-family: 'GTAlpina', 'Helvetica', 'Georgia';
-  font-size: px-rem(34);
+  font-size: px-rem(12);
   font-weight: 200;
   letter-spacing: -0.03em;
+
+  @include breakpoint('small') {
+    font-size: px-rem(34);
+  }
 }

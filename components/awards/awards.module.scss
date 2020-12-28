@@ -1,11 +1,19 @@
 @import '@/styles/import';
 
 .container {
-  padding: grid-column(5) grid-column(1) grid-column(1);
+  padding: desktop-column(5) desktop-column(1) desktop-column(1);
 }
 
 .heading {
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
+
+  @include breakpoint('small') {
+    margin-bottom: 0.5em;
+  }
+}
+
+.award {
+  display: inline;
 }
 
 .count {

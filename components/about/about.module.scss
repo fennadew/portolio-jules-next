@@ -1,11 +1,15 @@
 @import '@/styles/import';
 
 .container {
-  width: grid-column(30);
-  padding: grid-column(8) grid-column(1) grid-column(1);
-  margin-left: grid-column(18);
+  padding: mob-column(6) mob-column(1) mob-column(3);
 
   a {
     border-bottom: 1px solid $black;
+  }
+
+  @include breakpoint('small') {
+    width: desktop-column(30);
+    padding: desktop-column(8) desktop-column(1) desktop-column(1);
+    margin-left: desktop-column(18);
   }
 }

@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  margin: 0 grid-column(0.5);
+  margin: 0 desktop-column(0.5);
 
   background-color: $white;
   box-shadow: 0px 2px 7px rgba($black, 0.23);

@@ -1,11 +1,10 @@
-import classNames from 'classnames'
-
 import Layout from '../components/layout/layout'
 import Awards from '../components/awards/awards'
 import Projects from '../components/projects/projects'
 import About from '../components/about/about'
 
 import { html } from '../content/home.md'
+import SiteHead from '@/components/base/head'
 
 const importprojectPosts = async () => {
   const markdownFiles = require
@@ -45,6 +44,7 @@ const Home = ({ projectsList }) => {
 
   return (
     <Layout>
+      <SiteHead />
       <Projects projects={projectsList} />
       <Awards awards={awards} />
       <About html={html} />

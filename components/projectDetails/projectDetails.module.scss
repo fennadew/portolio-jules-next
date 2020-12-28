@@ -1,18 +1,27 @@
 @import '@/styles/import';
 
 .container {
+  position: relative;
   overflow: hidden;
   background-color: $white;
 }
 
 .inner {
   position: absolute;
-  display: flex;
-  padding: grid-column(1);
+  padding: mob-column(1);
+
+  @include breakpoint('small') {
+    display: flex;
+    padding: desktop-column(1);
+  }
 }
 
 .info {
-  width: grid-column(12);
+  width: mob-column(23);
+
+  @include breakpoint('medium') {
+    width: desktop-column(12);
+  }
 }
 
 .infoItem {
@@ -22,10 +31,15 @@
 .caseLink {
   text-decoration: underline;
   display: block;
-  margin-top: grid-column(1);
+
+  margin-top: desktop-column(1);
 }
 
 .body {
-  width: grid-column(31);
-  margin-left: grid-column(5);
+  width: mob-column(23);
+
+  @include breakpoint('small') {
+    width: desktop-column(31);
+    margin-left: desktop-column(5);
+  }
 }

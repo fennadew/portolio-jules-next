@@ -57,9 +57,13 @@ const ProjectDetails = ({ attributes, isOpen }) => {
           <h3 className={classNames(s.infoItem, 'b3 italic')}>{`Awards `}</h3>
           <ul className={s.infoItem}>
             {awards.map((award, i) => (
-              <li key={award} className={classNames(s.infoItem, 'b2')}>{`${award}${
-                i < awards.length - 1 ? `/ ` : ` `
-              }`}</li>
+              <li
+                key={award}
+                className={classNames(s.infoItem, 'b2')}
+                dangerouslySetInnerHTML={{
+                  __html: `${award}${i < awards.length - 1 ? `/ ` : ` `}`,
+                }}
+              ></li>
             ))}
           </ul>
           <h3 className={classNames(s.infoItem, 'b3 italic')}>{`Role `}</h3>

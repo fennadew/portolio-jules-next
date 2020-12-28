@@ -2,33 +2,47 @@
 
 .link {
   height: 100%;
-  padding: grid-column(0.5) grid-column(6) grid-column(3) grid-column(0.5);
+  padding: mob-column(0.5) mob-column(6) mob-column(2) mob-column(1);
+
+  @include breakpoint('small') {
+    padding: desktop-column(0.5) desktop-column(6) desktop-column(3) desktop-column(0.5);
+  }
 }
 
 .tag {
   position: absolute;
   bottom: 0;
-  right: calc(#{grid-column(0.5)} + 0.5em);
+  right: calc(#{desktop-column(0.5)} + 0.5em);
 
   transform-origin: left;
   transform: translate3d(100%, 0, 0) rotate(-90deg);
 }
 
 .title {
+  text-align: left;
   white-space: nowrap;
+
+  transition: font-variation-settings 0.5s $expoOut 0.3s, font-size 0.5s $expoOut 0.3s;
 
   @supports (font-variation-settings: normal) {
     @media (hover: hover) {
       &:hover {
         font-variation-settings: 'wght' 400, 'slnt' 0;
+        transition: font-variation-settings 0.5s $expoOut, font-size 0.5s $expoOut 0.3s;
       }
+    }
+
+    &.isActive {
+      font-variation-settings: 'wght' 800, 'slnt' -10;
+      font-size: get-vw(568);
+      transition-delay: 0s;
     }
 
     &.shadow {
       position: absolute;
       top: 0;
       left: 0;
-      padding: grid-column(0.5) grid-column(6) grid-column(3) grid-column(0.5);
+      padding: desktop-column(0.5) desktop-column(6) desktop-column(3) desktop-column(0.5);
       visibility: hidden;
     }
   }

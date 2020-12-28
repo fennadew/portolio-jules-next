@@ -14,7 +14,15 @@ $breakpoints: (
   @return ($px / $base) + 0rem;
 }
 
-@function grid-column($cols) {
+@function get-vw($px) {
+  @return (($px / 1500) * 100vw);
+}
+
+@function mob-column($cols) {
+  @return ($cols / 25) * 100vw;
+}
+
+@function desktop-column($cols) {
   @return ($cols / 50) * 100vw;
 }
 

@@ -5,21 +5,20 @@ import classNames from 'classnames'
 
 import ProjectCard from '@/components/projectCard/projectCard'
 import ProjectDetails from '@/components/projectDetails/projectDetails'
-import usePrevious from '@/hooks/usePrevious'
+
 import { easeOutExpo } from '@/utils/easings'
 
 import s from './project.module.scss'
+
+const TRANSITION = { duration: 0.5, ease: easeOutExpo }
 
 const Project = ({ project }) => {
   const { attributes = {} } = project
   const { rotation = 0, align } = attributes
 
-  const [width, setWidth] = useState(`auto`)
-  const prevWidth = usePrevious(width)
   const [isOpen, setIsOpen] = useState(false)
 
   const controls = useAnimation()
-  const transition = { duration: 0.5, ease: easeOutExpo }
 
   const toggleProject = useCallback(() => {
     const prevIsOpen = isOpen
@@ -28,28 +27,23 @@ const Project = ({ project }) => {
     if (!prevIsOpen) {
       controls.start({
         rotate: 0,
-        // width: `auto`,
-        transition: { ...transition, delay: 0 },
+        transition: { ...TRANSITION, delay: 0 },
       })
     } else {
       controls.start({
         opacity: 1,
         rotate: rotation,
-        // width: width,
-        transition: { ...transition, delay: 0.3 },
+        transition: { ...TRANSITION, delay: 0.3 },
       })
     }
-  }, [isOpen, width])
+  }, [isOpen, controls, rotation])
 
   useEffect(() => {
-    if (!isOpen && width !== prevWidth) {
-      controls.set({
-        opacity: 1,
-        rotate: rotation,
-        // width: width,
-      })
-    }
-  }, [rotation, isOpen, width])
+    controls.set({
+      opacity: 1,
+      rotate: rotation,
+    })
+  }, [controls, rotation])
 
   return (
     <motion.li

@@ -10,8 +10,8 @@ const Awards = ({ awards }) => {
 
       <ul>
         {awards.map(({ title, count }) => (
-          <li key={title} className={classNames(s.award, `b1`)} key={title}>
-            {title}
+          <li key={title} className={classNames(s.award, `b1`)}>
+            <span dangerouslySetInnerHTML={{ __html: title }}></span>
             <sup className={classNames(s.count, `sup`)}>{`(${count})`}</sup>
           </li>
         ))}
