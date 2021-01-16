@@ -18,10 +18,11 @@ const ProjectDetails = ({ attributes, isOpen }) => {
   const setRef = useResizeObserver((entry) => {
     if (!entry.target) return
 
-    const { height } = entry.target.getBoundingClientRect()
+    const height = entry.target.offsetHeight
 
     setHeight(height)
   }, [])
+  console.log(height, role)
 
   useEffect(() => {
     if (prevIsOpen === isOpen) return
@@ -36,8 +37,6 @@ const ProjectDetails = ({ attributes, isOpen }) => {
       })
     }
   }, [height, prevIsOpen, isOpen, controls])
-
-  console.log(height)
 
   return (
     <motion.article

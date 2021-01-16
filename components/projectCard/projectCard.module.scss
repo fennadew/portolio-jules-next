@@ -2,7 +2,7 @@
 
 .link {
   height: 100%;
-  padding: mob-column(0.5) mob-column(6) mob-column(2) mob-column(1);
+  padding: mob-column(0.5) mob-column(3) mob-column(2) mob-column(1);
 
   @include breakpoint('small') {
     padding: desktop-column(0.5) desktop-column(6) desktop-column(3) desktop-column(0.5);

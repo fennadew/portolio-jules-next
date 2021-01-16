@@ -138,8 +138,12 @@
   letter-spacing: -0.07em;
 
   @include breakpoint('small') {
-    font-size: px-rem(28);
+    font-size: px-rem(20);
     font-weight: 400;
+  }
+
+  @include breakpoint('medium') {
+    font-size: px-rem(28);
   }
 }
 
@@ -158,6 +162,10 @@
   font-weight: 200;
 
   @include breakpoint('small') {
+    font-size: px-rem(16);
+  }
+
+  @include breakpoint('medium') {
     font-size: px-rem(21);
   }
 }
@@ -169,6 +177,10 @@
   letter-spacing: -0.03em;
 
   @include breakpoint('small') {
+    font-size: px-rem(52);
+  }
+
+  @include breakpoint('medium') {
     font-size: px-rem(96);
   }
 }
@@ -181,6 +193,10 @@
   letter-spacing: -0.03em;
 
   @include breakpoint('small') {
+    font-size: px-rem(24);
+  }
+
+  @include breakpoint('medium') {
     font-size: px-rem(30);
   }
 }
@@ -193,6 +209,10 @@
   letter-spacing: -0.03em;
 
   @include breakpoint('small') {
+    font-size: px-rem(18);
+  }
+
+  @include breakpoint('medium') {
     font-size: px-rem(23);
   }
 
@@ -219,6 +239,10 @@
   letter-spacing: -0.03em;
 
   @include breakpoint('small') {
+    font-size: px-rem(16);
+  }
+
+  @include breakpoint('medium') {
     font-size: px-rem(34);
   }
 }

@@ -10,7 +10,7 @@
   position: absolute;
   padding: mob-column(1);
 
-  @include breakpoint('small') {
+  @include breakpoint('medium') {
     display: flex;
     padding: desktop-column(1);
   }
@@ -18,6 +18,10 @@
 
 .info {
   width: mob-column(23);
+  max-width: 420px;
+
+  @include breakpoint('small') {
+  }
 
   @include breakpoint('medium') {
     width: desktop-column(12);
@@ -37,9 +41,11 @@
 
 .body {
   width: mob-column(23);
+  margin-top: mob-column(2);
 
-  @include breakpoint('small') {
-    width: desktop-column(31);
+  @include breakpoint('medium') {
+    width: desktop-column(30);
+    margin-top: 0;
     margin-left: desktop-column(5);
   }
 }
